@@ -1,0 +1,16 @@
+<div class="component--recipe-detail">
+
+  <!-- Breadcrumbs -->
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href [routerLink]="['recipe']">Recipes</a>
+      </li>
+      <li class="breadcrumb-item active">{{ recipe.name }}</li>
+    </ol>
+  </nav>
+
+  <!-- Name -->
+  <h2 class="text-center">{{ recipe.name }}</h2>
+
+</div>
