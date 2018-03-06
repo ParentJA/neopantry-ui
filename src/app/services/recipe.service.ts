@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
-import { Recipe } from './recipe';
+import { Recipe } from '../models/recipe';
 
 const BASE_URL: string = 'http://localhost:8000/api/v1'
 

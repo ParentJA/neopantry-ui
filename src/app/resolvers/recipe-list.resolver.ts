@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
-import { Recipe } from '../recipe';
-import { RecipeService } from '../recipe.service';
+import { Recipe } from '../models/recipe';
+import { RecipeService } from '../services/recipe.service';
 
 @Injectable()
 export class RecipeListResolver implements Resolve<Recipe[]> {

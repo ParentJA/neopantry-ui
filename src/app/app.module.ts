@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { RecipeService } from './recipe.service';
-import { RecipeListResolver } from './resolvers/recipe-list.service';
-import { RecipeDetailResolver } from './resolvers/recipe-detail.service';
+import { RecipeService } from './services/recipe.service';
+import { RecipeListResolver } from './resolvers/recipe-list.resolver';
+import { RecipeDetailResolver } from './resolvers/recipe-detail.resolver';
 import { AppComponent } from './app.component';
-import { RecipeComponent } from './recipe/recipe.component';
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-import { routes } from './routes';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { routes } from './routes';
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [
     RecipeService,
