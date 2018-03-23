@@ -3,13 +3,13 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 
 import { Observable } from 'rxjs/Rx';
 
-import { Recipe } from '../models/recipe';
+import { RecipeForDetail } from '../models/recipe';
 import { RecipeService } from '../services/recipe.service';
 
 @Injectable()
-export class RecipeDetailResolver implements Resolve<Recipe> {
+export class RecipeDetailResolver implements Resolve<RecipeForDetail> {
   constructor(private recipeService: RecipeService) {}
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Recipe> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<RecipeForDetail> {
     return this.recipeService.getRecipe(route.params.id);
   }
 }

@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
-import { Recipe } from '../models/recipe';
+import { RecipeForDetail, RecipeForList, RecipeReview } from '../models/recipe';
 
 const BASE_URL: string = 'http://localhost:8000/api/v1'
 
@@ -12,24 +12,37 @@ const BASE_URL: string = 'http://localhost:8000/api/v1'
 export class RecipeService {
   constructor(private client: HttpClient) {}
 
-  getRecipes(): Observable<Recipe[]> {
-    return this.client.get(`${BASE_URL}/recipes/`).pipe(
+  public getRecipes(query: string = null): Observable<RecipeForList[]> {
+    let params: HttpParams = new HttpParams();
+    if (query) {
+      params = params.set('query', query);
+    }
+    return this.client.get(`${BASE_URL}/recipes/`, {params}).pipe(
       map((recipes: any[]) => {
-        return recipes.map(recipe => new Recipe(
-          recipe.id,
-          recipe.name
-        ));
+        return recipes.map(recipe => RecipeForList.create(recipe));
       })
     );
   }
 
-  getRecipe(id: number): Observable<Recipe> {
+  public getRecipe(id: number): Observable<RecipeForDetail> {
     return this.client.get(`${BASE_URL}/recipes/${id}/`).pipe(
       map((recipe: any) => {
-        return new Recipe(
-          recipe.id,
-          recipe.name
-        );
+        return RecipeForDetail.create(recipe);
+      })
+    );
+  }
+
+  public getRecipeReviews(recipe: number = null, user: number = null): Observable<RecipeReview[]> {
+    let params: HttpParams = new HttpParams();
+    if (recipe) {
+      params = params.set('recipe', recipe.toString());
+    }
+    if (user) {
+      params = params.set('user', user.toString());
+    }
+    return this.client.get(`${BASE_URL}/recipes/reviews/`, {params}).pipe(
+      map((recipeReviews: any[]) => {
+        return recipeReviews.map(recipeReview => RecipeReview.create(recipeReview));
       })
     );
   }

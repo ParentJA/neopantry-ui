@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
+    "@angular/cli": "^1.7.3",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
@@ -25,12 +26,13 @@
     "bootswatch": "^4.0.0",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
+    "ngx-bootstrap": "^2.0.2",
+    "npm": "^5.7.1",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.8",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
