@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { RecipeForDetail, RecipeForList, RecipeReview } from '../models/recipe';
 
-const BASE_URL: string = 'http://localhost:8000/api/v1'
+const BASE_URL: string = '/api/v1'
 
 @Injectable()
 export class RecipeService {
