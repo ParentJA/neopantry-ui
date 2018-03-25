@@ -1,8 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" [routerLink]="['/']">neopantry</a>
+    <a class="navbar-brand logo" [routerLink]="['/']">Neopantry</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/recipe']">Recipes</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container pt-3">
+    <router-outlet></router-outlet>
   </div>
-</nav>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { RecipeForList } from '../../models/recipe';
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeForList, RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
-  templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.css']
+  templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
   public query: string;

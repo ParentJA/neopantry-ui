@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { RecipeReview } from '../../models/recipe';
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeReview, RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-review',
-  templateUrl: './recipe-review.component.html',
-  styleUrls: ['./recipe-review.component.css']
+  templateUrl: './recipe-review.component.html'
 })
 export class RecipeReviewComponent implements OnInit {
   public query: string;
